@@ -1,14 +1,15 @@
 //constant def
 #define RATE 16000 //samp per sec
+#define CMD "arecord -r16000 -c1 -f S16_LE -d1 -q test.wav"//16000rate channel*1 duratation 1sec 
 //data struct
-struct WAVEHDR
+struct WAVHDR
 {
 	char ChunkID[4];//RIFF-fomat,4 symbols
 	int ChunkSize;//4 byte number
 	char Format[4];//it "WAVE"
 	
-	char Subchunk1D[4];//fmt
-	int Subchunk1Size//PCM = 16
+	char Subchunk1ID[4];//fmt
+	int Subchunk1Size;//PCM = 16
 	short AudioFormat;//shd = 1
 	short NumChannels;//shd = 1
 	int SampleRate;// 16000
@@ -20,3 +21,5 @@ struct WAVEHDR
 	int Subchunk2Size;
 };
 //function declar
+void displayWAVHDR(struct WAVHDR h);
+void displayWAVDATA(short []);
