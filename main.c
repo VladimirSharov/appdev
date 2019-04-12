@@ -4,9 +4,21 @@
 #include <time.h>
 #include "screen.h" //for user difine header used double quotes
 #include <stdlib.h>
+#include "comm.h"
 #include "sound.h" //every additional used in should be
-int main()
+int main(int argc, char **argv)
 {
+	if(argc == 2)
+	{
+		int ch;
+		printf("how many channels? (1:mano; 2:stereo):");
+		scanf("%d", &ch);
+		float duration;
+		printf("set length of test tone.(1-10sec):");
+		scanf("%f", &duration);
+		testTone(ch, atoi(argv[1]), duration);
+		return 0;
+	}
 /*	int arr[80]; //for making bar chart
 	srand(time(NULL));
 	for(int i=0; i<80; i++)
@@ -32,11 +44,12 @@ int main()
 		struct WAVHDR h;//instance of header
 		fread(&h, sizeof(h), 1, f);//read wac header to h, 1 time
 		displayWAVHDR(h);//show header information
-		fread(&h, sizeof(sd), 1, f);//read wac header to h, 1 time
+		fread(&sd, sizeof(sd), 1, f);//read wac header to h, 1 time
         	displayWAVDATA(sd);//show header information
 		fclose(f);//close opened file
+		sendDATA(sd);
 	}
 	resetColors();
-	printf("test message\n");
-	getchar();
+//	printf("test message\n");
+//	getchar();
 }

@@ -1,4 +1,6 @@
 //constant def
+//#define DEBUG
+#define PI 3.1415926
 #define RATE 16000 //samp per sec
 #define CMD "arecord -r16000 -c1 -f S16_LE -d1 -q test.wav"//16000rate channel*1 duratation 1sec 
 //data struct
@@ -23,3 +25,4 @@ struct WAVHDR
 //function declar
 void displayWAVHDR(struct WAVHDR h);
 void displayWAVDATA(short []);
+void testTone(int, int, float);

@@ -8,8 +8,8 @@ void barChart(int a[])
 	{
 		 for(j=0; j<a[i]/3; j++)
 	        {
-			setColors( (a[i]%8+30) , ((a[i]+3)%8+40) );
-			printf("\033[%d;%dH",-j+31, i+1);
+			//setColors( (a[i]%8+30) , ((a[i]+3)%8+40) );
+			printf("\033[%d;%dH",-j+35, i+1);
 			#ifdef UNICODE
 				printf("%s", "\u2590");
 			#else
