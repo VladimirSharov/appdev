@@ -19,11 +19,11 @@ int main(int argc, char **argv)
 		testTone(ch, atoi(argv[1]), duration);
 		return 0;
 	}
-/*	int arr[80]; //for making bar chart
+	int arr[80]; //for making bar chart
 	srand(time(NULL));
 	for(int i=0; i<80; i++)
 		arr[i] = rand()%70 + 30;
-*/
+/**/
 	FILE *f;
 	short sd[RATE];//fro all samles in 1 sec
 	while(1)

@@ -1,1 +1,89 @@
 # this is the 1st version
+This project is to turn Rapberry PI as an audio device. 
+The device operate in two modes: sound collector; test-tone generator.
+
+Table of content
+	1. Configuration instruction
+	2. Installetion instruction
+	3. Operating instruction
+	4. File list (Manifest)
+	5. Copyrignt
+	6. Contact information
+	7. Credits & Acknowledgents
+
+
+1. Configuration instruction
+
+This application is using version 3 model B of Raspberry PI, Linux version:4.14.79-v7+
+"Raspberry PI" should be equipped with a USB sound card, network connection and microphone.
+
+1.1 Configuration USB sound card as dafault device
+
+1.2 Install extra libriries: libcurl 
+
+
+2. Installetion instruction
+
+This software product using C environment and Linux operating system. 
+In order to use our product you should use Linux system and install C compilier.
+Also we use additional libriries not included by default.
+
+2.0.1 Installetion libcurl package
+
+Run .sudo apt-get install libcurl3. to install the libcurl3
+Run .sudo apt-get install libcurl4-openssl-dev. to install the development API of libcurl4
+use command "ls /usr/include/curl" to identify that libcurl library is installed  
+
+2.1 Installetion of product
+
+Download packages from our site(https://github.com/VladimirSharov/appdev)
+
+Use command make to generate extra packages needed for operating
+If during process packages is corrupted use: make purge
+
+
+3.Operating instruction
+
+3.0 Activation of debug mode
+Edit sound.h file, add line #define DEBUG
+
+3.1 Runnig in environment analyzing mode
+Run command ./sound.out
+
+3.2 Generating sound signal with defined frequency(30-16000 Hz)
+Run command ./sound.out NUMBER
+
+
+4. File list
+
+comm.c -send data to php program ,use ISO standart
+sound.c -analyze data recieved from microphone
+screen.c -displays data on a screen
+main.c -main program using for operating of product
+curltest.c -file to setup and check communication with server
+comm.h -header file for comm.c
+sound.h -header file for sound.c
+screen.h -header file for screen.c
+makefile -file helps to optimize proccess of generating extra files
+
+5. Copyright
+
+This product has open source licence. 
+You can transfer, share, modify and etc. our product in non-commercial,
+with reference to the source.
+ABSOLUTELY NO WARRANTY 
+Our company do NOT cover costs, damages and etc. occured due to using
+our product.
+
+
+6. Contact information
+
+You can contact with us on the page where your download our product
+
+
+7. Credits & Acknowledgents
+
+Our product was created as course project during 
+education program at VAMK, Finland 2019
+The target of course to learn operating of "Raspberry PI"
+Course was leaded by: Gao Chao
