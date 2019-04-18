@@ -37,7 +37,7 @@ use command "ls /usr/include/curl" to identify that libcurl library is installed
 2.1 Installetion of product
 
 Download packages from our site(https://github.com/VladimirSharov/appdev)
-
+click clone or download,use command git clone COPIEDINFO
 Use command make to generate extra packages needed for operating
 If during process packages is corrupted use: make purge
 
@@ -64,6 +64,7 @@ curltest.c -file to setup and check communication with server
 comm.h -header file for comm.c
 sound.h -header file for sound.c
 screen.h -header file for screen.c
+sound.php -file which recieve and show information in it
 makefile -file helps to optimize proccess of generating extra files
 
 5. Copyright
